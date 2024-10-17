@@ -71,7 +71,7 @@ footer h2 {
 .h-container{
     display: flex;
     flex-direction: row;
-    justify-content: flex-end;
+    justify-content:flex-end;
     width: 100vw;
 }
 
@@ -90,4 +90,22 @@ footer h2 {
     border-radius: 50px;
     border: solid 1px white;
     color: white;
+}
+
+.botones{
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    column-gap: 1vw;
+    margin-left: 1vh;
+    row-gap: 2vh;
+}
+
+.boton{
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    background-color: black;
+    padding: 1vh 3vw;
+    border-radius: 50px;
 }
