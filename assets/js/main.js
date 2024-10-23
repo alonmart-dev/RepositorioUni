@@ -49,9 +49,35 @@ function cambia1(elem){
     elem.innerHTML = Math.random();
 }
 
+
+
+const ImgOriginal = [
+'url("/assets/img/park-sunset.jpg")'
+,'url("/assets/img/crayones.jpg")'
+]
+
+let CambioText = document.getElementsByClassName("pasablanc");
 function cambia2(elem){
-    document.getElementsByTagName("main")[0].style.backgroundImage = "url('./assets/img/crayones_jpg.jpg')";
+    // console.log(document.getElementsByTagName("main")[0].style.backgroundImage);
+    // console.log(document.getElementsByTagName("main")[0].style.backgroundImage == ImgOriginal[1]);
+    // console.dir(CambioText);
+    if(document.getElementsByTagName("main")[0].style.backgroundImage == ImgOriginal[1]){
+        document.getElementsByTagName("main")[0].style.backgroundImage = ImgOriginal[0];
+        document.getElementsByTagName("body")[0].style.backgroundColor = "black";
+        for (let i = 0; i < CambioText.length; i++) {
+            CambioText[i].style.color = "white";
+        }
+    }
+    else{
+        document.getElementsByTagName("main")[0].style.backgroundImage = ImgOriginal[1];
+        document.getElementsByTagName("body")[0].style.backgroundColor = "white";
+        for (let i = 0; i < CambioText.length; i++) {
+            CambioText[i].style.color = "black";
+        }
+    };
 }
+
+
 
 function cambia3(elem){
     document.getElementsByClassName("botones")[0].style.flexDirection = "row-reverse";
