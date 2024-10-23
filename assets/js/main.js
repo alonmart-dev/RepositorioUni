@@ -80,5 +80,9 @@ function cambia2(elem){
 
 
 function cambia3(elem){
-    document.getElementsByClassName("botones")[0].style.flexDirection = "row-reverse";
+    if(document.getElementsByClassName("botones")[0].style.flexDirection == "row"){
+        document.getElementsByClassName("botones")[0].style.flexDirection = "row-reverse";
+    }else{
+        document.getElementsByClassName("botones")[0].style.flexDirection = "row";
+    }
 }
