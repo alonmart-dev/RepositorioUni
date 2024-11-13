@@ -3,13 +3,28 @@
 /*****************************************/
 
 var clock = document.querySelector("#clock");
-var date = new Date();
 
 let intervalId = window.setInterval(function () {
-    // console.log("Clock isn't working yet!");
+    var date = new Date();
 
+    // Convertimos las horas, minutos y segundos a strings
+    // y les agregamos un 0 a la izquierda si son menores a 10
+    var hours = date.getHours().toString().padStart(2, '0');
+    var minutes = date.getMinutes().toString().padStart(2, '0');
+    var seconds = date.getSeconds().toString().padStart(2, '0');
 
-}, 10000);
+    // Creamos la hora actual en formato "hh:mm:ss"
+    var horaact = hours + ":" + minutes + ":" + seconds;
+
+    // Obtenemos el elemento que contiene el reloj
+
+    var clock = document.querySelector("#clock");
+
+    // Actualizamos el texto del reloj con la hora actual
+
+    clock.textContent = horaact;
+
+}, 1000);
 
 
 
@@ -18,17 +33,6 @@ function stopClock() {
     clearInterval(intervalId);
 }
 /*****************************************/
-
-window.onload = function () {
-/*    
-    console.log("Hello, world!");
-    console.log(Math.random());
-
-*/
-
-
-
-}
 
 
 function Alonso(min, max) {
@@ -95,29 +99,3 @@ function cambia3(elem){
         document.getElementsByClassName("botones")[0].style.flexDirection = "row";
     }
 }
-
-
-//Actualiza el reloj en la pantalla
-
-function reloj() {
-    var date = new Date();
-
-    // Convertimos las horas, minutos y segundos a strings
-    // y les agregamos un 0 a la izquierda si son menores a 10
-    var hours = date.getHours().toString().padStart(2, '0');
-    var minutes = date.getMinutes().toString().padStart(2, '0');
-    var seconds = date.getSeconds().toString().padStart(2, '0');
-
-    // Creamos la hora actual en formato "hh:mm:ss"
-    var horaact = hours + ":" + minutes + ":" + seconds;
-
-    // Obtenemos el elemento que contiene el reloj
-
-    var clock = document.querySelector("#clock");
-
-    // Actualizamos el texto del reloj con la hora actual
-
-    clock.textContent = horaact;
-}
-
-setInterval(reloj, 1000);
