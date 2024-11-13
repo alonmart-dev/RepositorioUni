@@ -1,9 +1,18 @@
 /*****************************************/
 /* Ignoramos esta parte por el momento */
 /*****************************************/
+
+var clock = document.querySelector("#clock");
+var date = new Date();
+
 let intervalId = window.setInterval(function () {
     // console.log("Clock isn't working yet!");
+
+
 }, 10000);
+
+
+
 
 function stopClock() {
     clearInterval(intervalId);
@@ -46,7 +55,7 @@ function vuelveColor(elem){
 
 
 function cambia1(elem){
-    elem.innerHTML = Math.random();
+    document.getElementsByClassName("boton")[0].innerHTML = Math.random();
 }
 
 
@@ -86,3 +95,29 @@ function cambia3(elem){
         document.getElementsByClassName("botones")[0].style.flexDirection = "row";
     }
 }
+
+
+//Actualiza el reloj en la pantalla
+
+function reloj() {
+    var date = new Date();
+
+    // Convertimos las horas, minutos y segundos a strings
+    // y les agregamos un 0 a la izquierda si son menores a 10
+    var hours = date.getHours().toString().padStart(2, '0');
+    var minutes = date.getMinutes().toString().padStart(2, '0');
+    var seconds = date.getSeconds().toString().padStart(2, '0');
+
+    // Creamos la hora actual en formato "hh:mm:ss"
+    var horaact = hours + ":" + minutes + ":" + seconds;
+
+    // Obtenemos el elemento que contiene el reloj
+
+    var clock = document.querySelector("#clock");
+
+    // Actualizamos el texto del reloj con la hora actual
+
+    clock.textContent = horaact;
+}
+
+setInterval(reloj, 1000);
